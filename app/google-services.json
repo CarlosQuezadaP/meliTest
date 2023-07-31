@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "212749046153",
+    "project_id": "melitest-fe1ce",
+    "storage_bucket": "melitest-fe1ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212749046153:android:08a50cfa6d86745b81d158",
+        "android_client_info": {
+          "package_name": "co.com.mercadolibre_test.challenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212749046153-7avrqpglp0k5p7bjh7qqjkfqhllvvqlu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM1LsVng_hlGqhk22YiIh5CTZf6wDrV30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212749046153-7avrqpglp0k5p7bjh7qqjkfqhllvvqlu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

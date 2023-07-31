@@ -3,6 +3,7 @@ package co.com.mercadolibre_test.searchproducts.data.repositories
 import arrow.core.Either
 import co.com.mercadolibre_test.core.domain.NetworkException
 import co.com.mercadolibre_test.core.domain.error.ErrorHandler
+import co.com.mercadolibre_test.core.utils.reportError
 import co.com.mercadolibre_test.searchproducts.data.services.ProductDetailsService
 import co.com.mercadolibre_test.searchproducts.domain.exceptions.ProductDetailsException
 import co.com.mercadolibre_test.searchproducts.domain.repositories.ProductDetailsRepository
@@ -22,6 +23,7 @@ class ProductDetailsRepositoryImpl(
             try {
                 Either.right(service.getProductDescription(productId).description)
             } catch (exception: Exception) {
+                exception.reportError()
                 Either.left(
                     if (exception is NetworkException) {
                         ProductDetailsException.DescriptionNotAvailable()
