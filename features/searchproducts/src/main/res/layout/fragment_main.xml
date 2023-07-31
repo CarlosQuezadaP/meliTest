@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clSearchProductsContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.mainscreen.MainFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/aplSearchProductsPlaceHolder"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        app:elevation="@dimen/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mtSearchProductsPlaceHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            app:contentInsetLeft="@dimen/zero"
+            app:contentInsetStart="@dimen/zero">
+
+            <EditText
+                android:id="@+id/etSearchProductsPlaceHolder"
+                style="@style/SearchProductsBoxStyle"
+                android:hint="@string/search_in_mercado_libre"
+                android:importantForAutofill="no" />
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvSearchProductsScrollContainer"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/match_constraint"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aplSearchProductsPlaceHolder">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_16sdp">
+
+            <View
+                android:id="@+id/vDegrade"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="@dimen/match_constraint"
+                android:background="@drawable/view_pager_degrade"
+                app:layout_constraintBottom_toBottomOf="@id/vpWelcomeImages"
+                app:layout_constraintEnd_toEndOf="@id/vpWelcomeImages"
+                app:layout_constraintStart_toStartOf="@id/vpWelcomeImages"
+                app:layout_constraintTop_toTopOf="@id/vpWelcomeImages" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpWelcomeImages"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="@dimen/_120sdp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingLeft="@dimen/_16sdp"
+                android:paddingRight="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvImageDeveloper"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vpWelcomeImages">
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:text="@string/developer_message"
+                app:layout_constraintEnd_toEndOf="@id/cvImageDeveloper"
+                app:layout_constraintStart_toStartOf="@id/cvImageDeveloper"
+                app:layout_constraintTop_toBottomOf="@id/cvImageDeveloper" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

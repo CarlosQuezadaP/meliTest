@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="search_in_mercado_libre">Buscar en Mercado Libre</string>
+    <string name="free_sipping">Envío gratis</string>
+    <string name="free_sipping_details_message">Si compras este producto tu envío es GRATIS!!</string>
+    <string name="installment_label_without_interest">"en %s sin interés"</string>
+    <string name="installment_label">"en %s</string>
+
+    <string name="autosuggestions_not_available">Las sugerencias no se encuentran disponibles por ahora. :(</string>
+    <string name="products_not_available">No fue posible realizar la búsqueda por ahora. Intentalo de nuevo :)</string>
+    <string name="products_empty_title">No encontramos publicaciones</string>
+    <string name="products_empty_subtitle">Revisa que la palabra esté bien escrita.</string>
+    <string name="product_description_empty">La descripción del producto no está disponible.</string>
+
+    <string name="developer_message">Esta es una prueba técnica presentada a Mercado Libre con el fin de mostrar los conocimientos que poseo sobre en el desarrollo de apps para Android.
+        \n\nAlgunas librerías usadas:\n\n* Navigation component\n* Coroutines flow\n* Material components\n* Dagger\n* Retrofit\n* Paging\n* Picasso\n* Arrow\n* Facebook shimmer\n\n
+        El proyecto cuenta con una estructura modular cuyos componentes son: app, core, features y libraries.\n\nLa aplicación cuenta con soporte para rotación de pantalla y dark mode.\n\n
+        Mercado Libre.
+    </string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mercado Libre Challenge</string>
+
+    <string name="unknown_error">Ha ocurrido un error inesperado. Esperámos que no suceda de nuevo :)</string>
+    <string name="no_internet_error">No hay conexion a internet</string>
+</resources>

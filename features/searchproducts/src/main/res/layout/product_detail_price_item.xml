@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_16sdp">
+
+    <TextView
+        android:id="@+id/tvProductDetailOriginalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="$6.999.000"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvProductDetailPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_secondary_color"
+        android:textSize="@dimen/_24sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProductDetailOriginalPrice"
+        tools:text="$5.199.000" />
+
+    <TextView
+        android:id="@+id/tvProductDetailDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:textColor="@color/mercado_libre_green_color"
+        android:textSize="@dimen/_18sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tvProductDetailPrice"
+        app:layout_constraintStart_toEndOf="@id/tvProductDetailPrice"
+        app:layout_constraintTop_toTopOf="@id/tvProductDetailPrice"
+        tools:text="25% OFF"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvProductDetailInstallments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_secondary_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProductDetailPrice"
+        tools:text="en 36x $144.417" />
+</androidx.constraintlayout.widget.ConstraintLayout>

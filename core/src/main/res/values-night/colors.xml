@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#121212</color>
+    <color name="colorPrimaryVariant">#0c0c0c</color>
+
+    <color name="search_background_color">#FF555555</color>
+    <color name="mercado_libre_green_color">#00A650</color>
+    <color name="color_grey">#DDDDDD</color>
+
+    <color name="text_secondary_color">#FFDDDDDD</color>
+</resources>

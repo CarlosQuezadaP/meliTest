@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "co.com.mercadolibre_test.challenge"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    flavorDimensions "distribution"
+    productFlavors {
+        prod {
+            dimension "distribution"
+            buildConfigField "String", "BASE_URL", '"https://api.mercadolibre.com/"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation androidxDependencies.corektx
+    implementation androidxDependencies.appcompat
+    implementation googleDependencies.material
+    implementation androidxDependencies.constraintlayout
+    implementation androidxDependencies.navigationfragmentktx
+    implementation androidxDependencies.navigationuiktx
+    implementation sdpandroid
+    implementation googleDependencies.dagger
+    implementation googleDependencies.daggerandroidsupport
+    kapt googleDependencies.daggercompiler
+    kapt googleDependencies.daggerandroidprocessor
+    implementation squareupDependencies.retrofit2convertergson
+    implementation squareupDependencies.retrofit2
+    implementation googleDependencies.gson
+
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.androidxjunit
+    androidTestImplementation testDependencies.androidxespressocore
+
+    implementation project(path: ':core')
+    implementation project(path: ':features:searchproducts')
+}

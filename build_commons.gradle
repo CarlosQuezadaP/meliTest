@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation androidxDependencies.navigationfragmentktx
+    implementation androidxDependencies.lifecyclelivedataktx
+    implementation androidxDependencies.constraintlayout
+    implementation androidxDependencies.lifecyclecommon
+    implementation androidxDependencies.navigationuiktx
+    implementation androidxDependencies.appcompat
+    implementation androidxDependencies.corektx
+    implementation androidxDependencies.paging
+
+    implementation googleDependencies.daggerandroidsupport
+    implementation googleDependencies.material
+    implementation googleDependencies.dagger
+    implementation googleDependencies.gson
+
+    implementation squareupDependencies.retrofit2convertergson
+    implementation squareupDependencies.retrofit2
+    implementation squareupDependencies.picasso
+
+    kapt googleDependencies.daggerandroidprocessor
+    kapt googleDependencies.daggercompiler
+
+    implementation facebookshimmer
+    implementation sdpandroid
+    implementation arrow
+
+    testImplementation testDependencies.coroutinestest
+    testImplementation testDependencies.coretesting
+    testImplementation testDependencies.kluent
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.junit
+
+    androidTestImplementation testDependencies.androidxespressocore
+    androidTestImplementation testDependencies.androidxjunit
+
+    implementation project(path: ':libraries:testutils')
+}

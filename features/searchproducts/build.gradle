@@ -1,0 +1,11 @@
+apply from: '../../build_commons.gradle'
+apply plugin: 'kotlin-android'
+
+android {
+
+}
+
+dependencies {
+
+    implementation project(path: ':core')
+}

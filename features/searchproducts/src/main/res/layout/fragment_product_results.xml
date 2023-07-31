@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clProductsResultContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.productresults.ProductResultsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/aplSearchProductsPlaceHolder"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mtSearchProductsPlaceHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            app:contentInsetLeft="@dimen/zero"
+            app:contentInsetStart="@dimen/zero">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clToolbarContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_arrow_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="contentDescription" />
+
+                <EditText
+                    android:id="@+id/etSearchProductsPlaceHolder"
+                    style="@style/SearchProductsBoxStyle"
+                    android:layout_width="@dimen/match_constraint"
+                    android:hint="@string/search_in_mercado_libre"
+                    android:importantForAutofill="no"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivBack"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/productsShimmer"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/match_constraint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aplSearchProductsPlaceHolder"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/llShimmerItemsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/product_result_item_shimmer" />
+
+            <include layout="@layout/product_result_item_shimmer" />
+
+            <include layout="@layout/product_result_item_shimmer" />
+
+            <include layout="@layout/product_result_item_shimmer" />
+
+            <include layout="@layout/product_result_item_shimmer" />
+
+            <include layout="@layout/product_result_item_shimmer" />
+
+            <include layout="@layout/product_result_item_shimmer" />
+
+            <include layout="@layout/product_result_item_shimmer" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProductResults"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/match_constraint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aplSearchProductsPlaceHolder"
+        tools:listitem="@layout/product_result_item" />
+
+    <ViewStub
+        android:id="@+id/vsProductEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aplSearchProductsPlaceHolder" />
+</androidx.constraintlayout.widget.ConstraintLayout>

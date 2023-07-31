@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_products_nav_graph"
+    app:startDestination="@id/productsFragment">
+
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="co.com.mercadolibre_test.searchproducts.presentation.mainscreen.MainFragment"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/navigateToSearchProducts"
+            app:destination="@id/searchProductsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchProductsFragment"
+        android:name="co.com.mercadolibre_test.searchproducts.presentation.searchproducts.SearchProductsFragment"
+        android:label="fragment_search_products"
+        tools:layout="@layout/fragment_search_products">
+        <action
+            android:id="@+id/navigateToProductResults"
+            app:destination="@id/productResultsFragment"
+            app:popUpTo="@id/searchProductsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="old_query"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/productResultsFragment"
+        android:name="co.com.mercadolibre_test.searchproducts.presentation.productresults.ProductResultsFragment"
+        android:label="fragment_product_results"
+        tools:layout="@layout/fragment_product_results">
+        <action
+            android:id="@+id/navigateToSearchProducts"
+            app:destination="@id/searchProductsFragment" />
+        <action
+            android:id="@+id/navigateToProductDetails"
+            app:destination="@id/productDetailsFragment" />
+        <argument
+            android:name="query"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="co.com.mercadolibre_test.searchproducts.presentation.productdetails.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" >
+        <argument
+            android:name="product"
+            app:argType="co.com.mercadolibre_test.searchproducts.domain.models.productresults.Product" />
+    </fragment>
+</navigation>

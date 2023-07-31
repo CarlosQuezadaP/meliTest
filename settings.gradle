@@ -1,0 +1,5 @@
+rootProject.name = "Mercadolibre Challenge"
+include ':app'
+include ':core'
+include ':features:searchproducts'
+include ':libraries:testutils'
