@@ -30,7 +30,7 @@ Facebook Shimmer
 ## Screenshots modo light
 | SplashScreen | MainScreen | SearchScreen | ResultsScreen | DetailsScreen |
 | SplashScreen | MainScreen | SearchScreen | ResultsScreen | DetailsScreen |
-|-|-|-|-|-|
+|dark/dark_search.png|-|-|-|-|
 
 ## Screenshots modo dark
 | SplashScreen | MainScreen | SearchScreen | ResultsScreen | DetailsScreen |
