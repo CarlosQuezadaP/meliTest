@@ -43,16 +43,19 @@ class SplashScreenFragment : Fragment(R.layout.fragment_splash_screen) {
                 startDelay = ANIMATION_LENGTH_SHORT
                 play(welcomeMessageAnimator).with(iconAnimator)
                 addListener(object : Animator.AnimatorListener {
-                    override fun onAnimationStart(animator: Animator?) {}
+                    override fun onAnimationStart(p0: Animator) {
+                    }
 
-                    override fun onAnimationEnd(animator: Animator?) {
+                    override fun onAnimationEnd(p0: Animator) {
                         // Cuando terminamos la animación navegamos en el grafo a la pantalla principal
                         navigateToProductSearchView()
                     }
 
-                    override fun onAnimationCancel(animator: Animator?) {}
+                    override fun onAnimationCancel(p0: Animator) {
+                    }
 
-                    override fun onAnimationRepeat(animator: Animator?) {}
+                    override fun onAnimationRepeat(p0: Animator) {
+                    }
                 })
                 start()
             }

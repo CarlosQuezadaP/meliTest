@@ -3,7 +3,6 @@ package co.com.mercadolibre_test.searchproducts.data.repositories
 import arrow.core.Either
 import co.com.mercadolibre_test.core.domain.NetworkException
 import co.com.mercadolibre_test.core.domain.error.ErrorHandler
-import co.com.mercadolibre_test.core.utils.reportError
 import co.com.mercadolibre_test.searchproducts.data.AutoSuggestionMapper.convertSuggestionContentToAutoSuggestion
 import co.com.mercadolibre_test.searchproducts.data.services.AutosuggestionsService
 import co.com.mercadolibre_test.searchproducts.domain.exceptions.AutosuggestionsException
@@ -24,7 +23,6 @@ class AutosuggestionsRepositoryImpl(
             try {
                 Either.right(service.getAutosuggestions(query).convertSuggestionContentToAutoSuggestion())
             } catch (exception: Exception) {
-                exception.reportError()
                 Either.left(
                     if (exception is NetworkException) {
                         AutosuggestionsException.SuggestionsNotAvailable()

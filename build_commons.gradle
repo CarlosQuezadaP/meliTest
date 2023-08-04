@@ -40,6 +40,7 @@ dependencies {
     implementation androidxDependencies.lifecyclelivedataktx
     implementation androidxDependencies.constraintlayout
     implementation androidxDependencies.lifecyclecommon
+    implementation androidxDependencies.lifecyViewModel
     implementation androidxDependencies.navigationuiktx
     implementation androidxDependencies.appcompat
     implementation androidxDependencies.corektx

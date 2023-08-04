@@ -5,13 +5,13 @@ ext {
     androidx_appcompat_version = "1.3.0"
     androidx_constraintlayout_version = "2.0.4"
     androidx_lifecycle_livedata_ktx_version = "2.3.1"
-    androidx_lifecycle_version = "2.3.1"
+    androidx_lifecycle_version = "2.4.0"
     androidx_paging_version = "3.0.0"
     androidx_core_testing_version = "2.1.0"
 
     // Google
     google_material_version = "1.4.0"
-    google_dagger_version = "2.37"
+    google_dagger_version = "2.47"
     google_gson_version = "2.8.5"
 
     // Squareup
@@ -41,6 +41,7 @@ ext {
             navigationuiktx      : "androidx.navigation:navigation-ui-ktx:$nav_version",
             lifecyclelivedataktx : "androidx.lifecycle:lifecycle-livedata-ktx:$androidx_lifecycle_version",
             lifecyclecommon      : "androidx.lifecycle:lifecycle-common-java8:$androidx_lifecycle_version",
+            lifecyViewModel     : "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidx_lifecycle_version",
             paging               : "androidx.paging:paging-runtime:$androidx_paging_version"
     ]
     googleDependencies = [

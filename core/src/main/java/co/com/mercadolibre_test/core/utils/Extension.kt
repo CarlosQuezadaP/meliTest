@@ -3,14 +3,8 @@ package co.com.mercadolibre_test.core.utils
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import arrow.core.Either
-import arrow.core.left
-import arrow.core.right
 import co.com.mercadolibre_test.core.base.delegates.FragmentViewBindingDelegate
-import com.google.firebase.crashlytics.FirebaseCrashlytics
-import retrofit2.HttpException
-import timber.log.Timber
-import java.io.IOException
+
 import java.text.NumberFormat
 
 /**
@@ -32,9 +26,4 @@ fun formatPrice(price: Long): String {
 fun formatPrice(price: Double): String {
     val format = NumberFormat.getCurrencyInstance().apply { maximumFractionDigits = 0 }
     return format.format(price).replace(",", ".")
-}
-
-fun Exception.reportError(){
-    FirebaseCrashlytics.getInstance().recordException(this)
-    Timber.e(this)
 }
